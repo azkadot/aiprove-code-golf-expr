@@ -1,0 +1,1 @@
+exports.evalExpr=s=>{let t=s.match(/[\d.]+|\S/g),i=0,e=d=>{let v,p,r;v=t[i]=='('?(i++,v=e(0),i++,v):t[i]=='-'?(i++,-e(2)):+t[i++];while((p='+-*/'.indexOf(t[i]))/2>=d){i++;v=[v+(r=e(p/2+1|0)),v-r,v*r,v/r][p]}return v};return e(0)}
